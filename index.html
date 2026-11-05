@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Fizza Khalid — Software Engineer</title>
-<meta name="description" content="Fizza Khalid — Computer Science Student, C++ / SQL / Systems Developer">
+<meta name="description" content="Fizza Khalid — CS student at FAST-NUCES and AI developer. C++, SQL, Python, RAG and LLM-powered applications.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@300;400;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
@@ -391,7 +391,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 .proj-item.open .proj-arrow { background: var(--acid); border-color: var(--acid); color: #06070a; transform: rotate(45deg); }
 
 .proj-detail { max-height: 0; overflow: hidden; transition: max-height .5s cubic-bezier(.16,1,.3,1); }
-.proj-item.open .proj-detail { max-height: 800px; }
+.proj-item.open .proj-detail { max-height: 1400px; }
 .proj-detail-inner { padding: 0 0 28px; display: flex; flex-direction: column; gap: 20px; }
 .proj-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .proj-bullets li { font-size: 13.5px; color: var(--text-dim); padding-left: 18px; position: relative; line-height: 1.65; }
@@ -406,6 +406,47 @@ section { padding: var(--section-pad) 0; position: relative; }
 }
 .pm-row:last-child { border-bottom: none; padding-bottom: 0; }
 .pm-row .val { color: var(--acid); font-weight: 700; }
+
+/* ============ EXPERIENCE ============ */
+.exp-list { margin-top: 44px; display: flex; flex-direction: column; gap: 20px; }
+.exp-card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 24px; position: relative; overflow: hidden;
+}
+.exp-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(to bottom, var(--acid), var(--cyan));
+}
+.exp-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline; }
+.exp-role { font-family: var(--display); font-size: clamp(20px, 4.5vw, 28px); font-weight: 700; color: var(--text); }
+.exp-date { font-size: 11.5px; color: var(--acid); font-weight: 700; }
+.exp-org { font-size: 13px; color: var(--text-faint); margin-top: 6px; }
+.exp-card .proj-bullets { margin-top: 20px; }
+.exp-card .proj-stack { margin-top: 18px; }
+
+/* ============ TOOL GROUPS ============ */
+.tool-groups { margin-top: 36px; display: grid; grid-template-columns: 1fr; gap: 16px; }
+.tool-group {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px;
+}
+.tool-group h4 {
+  font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--acid); font-weight: 700; margin-bottom: 12px;
+}
+.tool-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.tool-chips span {
+  font-size: 11.5px; padding: 5px 11px; border: 1px solid var(--line-bright);
+  border-radius: 20px; color: var(--text-dim);
+}
+.proj-link {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; width: fit-content;
+  font-size: 12px; color: var(--acid); border-bottom: 1px dashed var(--acid); padding-bottom: 2px;
+}
+.proj-link:hover { color: var(--cyan); border-color: var(--cyan); }
+.proj-tag-new {
+  font-size: 9.5px; padding: 2px 7px; border-radius: 4px; background: var(--acid); color: #06070a;
+  font-weight: 700; margin-left: 8px; vertical-align: middle;
+}
 
 /* ============ PROCESS ============ */
 .flow-wrap { position: relative; margin-top: 52px; padding-left: 0; }
@@ -495,6 +536,7 @@ footer { border-top: 1px solid var(--line); padding: 28px 0; }
   .proj-detail-inner { flex-direction: row; }
   .proj-bullets { flex: 1; }
   .proj-meta { flex: 0 0 220px; }
+  .tool-groups { grid-template-columns: 1fr 1fr; }
   .contact-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: start; }
   .foot-inner { flex-direction: row; justify-content: space-between; text-align: left; }
 }
@@ -548,10 +590,11 @@ a:focus-visible, button:focus-visible {
   </a>
   <nav class="nav-links">
     <a href="#about" data-num="01">About</a>
-    <a href="#skills" data-num="02">Skills</a>
-    <a href="#projects" data-num="03">Projects</a>
-    <a href="#process" data-num="04">Process</a>
-    <a href="#contact" data-num="05">Contact</a>
+    <a href="#experience" data-num="02">Experience</a>
+    <a href="#skills" data-num="03">Skills</a>
+    <a href="#projects" data-num="04">Projects</a>
+    <a href="#process" data-num="05">Process</a>
+    <a href="#contact" data-num="06">Contact</a>
   </nav>
   <a href="#contact" class="nav-cta">Get in touch ↗</a>
   <div class="burger" id="burger" aria-label="Toggle menu" role="button" tabindex="0">
@@ -561,10 +604,11 @@ a:focus-visible, button:focus-visible {
 
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <a href="#about"><span class="num">01</span>About</a>
-  <a href="#skills"><span class="num">02</span>Skills</a>
-  <a href="#projects"><span class="num">03</span>Projects</a>
-  <a href="#process"><span class="num">04</span>Process</a>
-  <a href="#contact"><span class="num">05</span>Contact</a>
+  <a href="#experience"><span class="num">02</span>Experience</a>
+  <a href="#skills"><span class="num">03</span>Skills</a>
+  <a href="#projects"><span class="num">04</span>Projects</a>
+  <a href="#process"><span class="num">05</span>Process</a>
+  <a href="#contact"><span class="num">06</span>Contact</a>
 </div>
 
 <main id="top">
@@ -577,7 +621,7 @@ a:focus-visible, button:focus-visible {
         <div>
           <div class="hero-kicker">
             <span class="pulse"></span>
-            Available for internships &amp; collab projects
+            AI Intern @ FAST‑NUCES ’26 · Open to internships
           </div>
           <h1 class="hero-title" id="heroTitle">
             <span class="line"><span>Fizza Khalid —</span></span>
@@ -585,10 +629,10 @@ a:focus-visible, button:focus-visible {
             <span class="line"><span>that compile.</span></span>
           </h1>
           <p class="hero-desc">
-            Computer Science student at <b>FAST‑NUCES</b> (Class of 2028),
-            shipping projects from bare‑metal <b>Assembly</b> to full‑stack
-            <b>AI platforms</b>. Strong grip on <b>C++</b> &amp; <b>SQL</b>,
-            obsessed with clean architecture and systems that actually hold up.
+            Computer Science student at <b>FAST‑NUCES</b> (Class of 2028) with a
+            strong command of <b>C++</b> &amp; <b>SQL</b> and hands‑on experience building
+            <b>Python AI applications</b> — including a bilingual <b>LLM‑powered RAG chatbot</b>.
+            Shipping projects from bare‑metal Assembly to retrieval pipelines.
           </p>
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">View Projects →</a>
@@ -596,7 +640,7 @@ a:focus-visible, button:focus-visible {
           </div>
           <div class="hero-stats">
             <div>
-              <div class="stat-num"><span class="cnt" data-target="6">0</span><span class="suf">+</span></div>
+              <div class="stat-num"><span class="cnt" data-target="7">0</span><span class="suf">+</span></div>
               <div class="stat-label">Major Projects</div>
             </div>
             <div>
@@ -634,6 +678,10 @@ a:focus-visible, button:focus-visible {
               <span class="badge-dot" style="background:var(--cyan)"></span>
               SQL Server · T‑SQL
             </div>
+            <div class="float-badge">
+              <span class="badge-dot" style="background:var(--magenta)"></span>
+              Python · RAG · LLMs
+            </div>
           </div>
         </div>
       </div>
@@ -657,25 +705,25 @@ a:focus-visible, button:focus-visible {
     <div class="wrap">
       <div class="reveal">
         <div class="section-tag"><span class="idx">01</span> About</div>
-        <h2 class="section-title">From bootloaders<br>to browser‑based ML.</h2>
+        <h2 class="section-title">From Assembly<br>to LLM‑powered apps.</h2>
         <p class="section-sub">A quick rundown of who I am, where I study, and the trail of FSc, gap years and console apps that got me here.</p>
       </div>
 
       <div class="about-grid">
         <div class="reveal about-card" style="transition-delay:.1s">
           <div class="ac-row"><span class="k">Name</span><span class="v">Fizza Khalid</span></div>
-          <div class="ac-row"><span class="k">Role</span><span class="v">CS Student / Developer</span></div>
+          <div class="ac-row"><span class="k">Role</span><span class="v">CS Student · AI Developer</span></div>
           <div class="ac-row"><span class="k">Based in</span><span class="v">Lahore, Pakistan</span></div>
           <div class="ac-row"><span class="k">University</span><span class="v">FAST‑NUCES</span></div>
           <div class="ac-row"><span class="k">Graduating</span><span class="v acid">2028</span></div>
-          <div class="ac-row"><span class="k">Core Stack</span><span class="v">C++ · SQL · Python</span></div>
+          <div class="ac-row"><span class="k">Core Stack</span><span class="v">C++ · SQL · Python · RAG</span></div>
           <div class="ac-row"><span class="k">Languages</span><span class="v">English · Urdu</span></div>
         </div>
 
         <div class="reveal" style="transition-delay:.2s">
           <div class="about-text">
-            <p>I'm a Computer Science student at <b>FAST National University (FAST‑NUCES)</b>, expecting to graduate in 2028, with a <span class="hl">strong command over C++ and SQL</span> and working knowledge of Python.</p>
-            <p>My path here wasn't a straight line — I came in through <b>FSc Pre‑Medical</b>, then completed <b>FSc Pre‑Engineering independently during a gap year</b> before committing fully to CS. That detour taught me discipline I now put into every project: from <span class="hl">low‑level Assembly programs</span>, to <span class="hl">layered C++ systems</span> with role‑based access, to <span class="hl">browser‑based neural networks</span> that process everything client‑side.</p>
+            <p>I'm a Computer Science student at <b>FAST National University (FAST‑NUCES)</b>, expecting to graduate in 2028, with a <span class="hl">strong command of C++ and SQL</span> and hands‑on experience building <span class="hl">Python‑based AI applications</span> — most recently a bilingual, LLM‑powered chatbot built on Retrieval‑Augmented Generation during my AI internship.</p>
+            <p>My path here wasn't a straight line — I came in through <b>FSc Pre‑Medical</b>, then completed <b>FSc Pre‑Engineering independently during a gap year</b> before committing fully to CS. That detour taught me discipline I now put into every project: from <span class="hl">low‑level Assembly programs</span>, to <span class="hl">layered C++ systems</span> with role‑based access, to <span class="hl">browser‑based neural networks</span> and <span class="hl">RAG pipelines</span> grounded in real documents.</p>
             <p>I care about <b>object‑oriented design</b>, <b>clean architecture</b>, and writing software that's actually maintainable — not just code that runs once and survives a demo.</p>
           </div>
 
@@ -707,13 +755,39 @@ a:focus-visible, button:focus-visible {
     </div>
   </section>
 
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="section-tag"><span class="idx">02</span> Experience</div>
+        <h2 class="section-title">Where I've<br>shipped real work.</h2>
+        <p class="section-sub">Hands‑on AI engineering on a live research project — from raw documents to grounded answers.</p>
+      </div>
+
+      <div class="exp-list">
+        <div class="exp-card reveal" style="transition-delay:.1s">
+          <div class="exp-top">
+            <div class="exp-role">AI Intern</div>
+            <div class="exp-date">July – August 2026</div>
+          </div>
+          <div class="exp-org">FAST‑NUCES · AgriAssist / AgriLLM</div>
+          <ul class="proj-bullets">
+            <li>Contributed to a bilingual, LLM‑powered agricultural advisory system, working on document processing, embedding generation, vector database integration and the RAG pipeline</li>
+            <li>Collected, extracted, cleaned and chunked agricultural resources from research and agricultural institutions (300‑word chunks with 50‑word overlap) for semantic retrieval</li>
+          </ul>
+          <div class="proj-stack"><span>Python</span><span>RAG</span><span>Embeddings</span><span>Vector DB</span><span>LLMs</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== SKILLS ===== -->
   <section id="skills">
     <div class="wrap">
       <div class="reveal">
-        <div class="section-tag"><span class="idx">02</span> Skills</div>
+        <div class="section-tag"><span class="idx">03</span> Skills</div>
         <h2 class="section-title">The toolkit behind<br>every project.</h2>
-        <p class="section-sub">Strongest where it counts — systems‑level thinking, structured data, and the logic to tie it together.</p>
+        <p class="section-sub">Strongest where it counts — systems‑level thinking, structured data, and applied AI to tie it together.</p>
       </div>
 
       <div class="skills-wrap reveal" style="transition-delay:.1s">
@@ -728,9 +802,19 @@ a:focus-visible, button:focus-visible {
             <div class="skill-pct">85%</div>
             <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
           </div>
-          <div class="skill-row" data-pct="60">
-            <div class="skill-name">Python <span class="stag">basic → intermediate</span></div>
-            <div class="skill-pct">60%</div>
+          <div class="skill-row" data-pct="75">
+            <div class="skill-name">Python <span class="stag">AI apps</span></div>
+            <div class="skill-pct">75%</div>
+            <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+          </div>
+          <div class="skill-row" data-pct="75">
+            <div class="skill-name">LLMs &amp; RAG <span class="stag">embeddings · retrieval</span></div>
+            <div class="skill-pct">75%</div>
+            <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+          </div>
+          <div class="skill-row" data-pct="65">
+            <div class="skill-name">JavaScript <span class="stag">web · Node.js</span></div>
+            <div class="skill-pct">65%</div>
             <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
           </div>
           <div class="skill-row" data-pct="88">
@@ -749,6 +833,24 @@ a:focus-visible, button:focus-visible {
             <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
           </div>
         </div>
+        <div class="tool-groups">
+          <div class="tool-group">
+            <h4>AI &amp; Machine Learning</h4>
+            <div class="tool-chips"><span>LLMs</span><span>RAG</span><span>NLP</span><span>Semantic Search</span><span>Text Embeddings</span><span>Prompt Engineering</span><span>Neural Networks</span></div>
+          </div>
+          <div class="tool-group">
+            <h4>Frameworks &amp; Libraries</h4>
+            <div class="tool-chips"><span>Streamlit</span><span>ChromaDB</span><span>Sentence Transformers</span><span>Brain.js</span><span>Node.js / Express</span></div>
+          </div>
+          <div class="tool-group">
+            <h4>Tools &amp; Technologies</h4>
+            <div class="tool-chips"><span>Git</span><span>GitHub</span><span>REST APIs</span><span>Groq API</span><span>Gemini API</span><span>SQL Server</span></div>
+          </div>
+          <div class="tool-group">
+            <h4>Core Concepts</h4>
+            <div class="tool-chips"><span>OOP</span><span>Database Design</span><span>Data Preprocessing</span><span>Problem Solving</span><span>Logical Thinking</span></div>
+          </div>
+        </div>
         <div class="lang-pills">
           <div class="lang-pill">🌐 English <span class="flu">FLUENT</span></div>
           <div class="lang-pill">🌐 Urdu <span class="flu">FLUENT</span></div>
@@ -761,32 +863,34 @@ a:focus-visible, button:focus-visible {
   <section id="projects">
     <div class="wrap">
       <div class="reveal">
-        <div class="section-tag"><span class="idx">03</span> Projects</div>
+        <div class="section-tag"><span class="idx">04</span> Projects</div>
         <h2 class="section-title">Selected work,<br>tap to expand.</h2>
-        <p class="section-sub">Six projects spanning game dev, systems programming, database architecture and applied AI.</p>
+        <p class="section-sub">Seven projects spanning applied AI, database architecture, systems programming and game dev.</p>
       </div>
 
       <div class="proj-list reveal" style="transition-delay:.1s" id="projList">
-
         <div class="proj-item">
           <div class="proj-head">
             <div>
-              <span class="proj-idx">01 / Game Dev</span>
-              <span class="proj-name">Space Shooter Game</span>
-              <div class="proj-stack"><span>C++</span><span>SFML</span><span>OOP</span></div>
+              <span class="proj-idx">01 / Applied AI · RAG</span>
+              <span class="proj-name">AgriAssist — Bilingual AI Advisor</span><span class="proj-tag-new">NEW</span>
+              <div class="proj-stack"><span>Python</span><span>RAG</span><span>ChromaDB</span><span>Sentence Transformers</span><span>Groq API</span><span>Streamlit</span></div>
             </div>
             <div class="proj-arrow">↗</div>
           </div>
           <div class="proj-detail"><div class="proj-detail-inner">
             <ul class="proj-bullets">
-              <li>Developed a 2D space shooter game using C++</li>
-              <li>Implemented game logic using loops, arrays, and object‑oriented programming</li>
-              <li>Designed player movement, enemy behavior, and collision handling</li>
+              <li>Developed a bilingual (English &amp; Urdu) AI chatbot giving advice on five major crops: wheat, rice, cotton, sugarcane and maize</li>
+              <li>Engineered a RAG pipeline using ChromaDB and Sentence Transformers (all‑MiniLM‑L6‑v2) for semantic retrieval and context‑grounded responses</li>
+              <li>Integrated LLM APIs for query processing and language handling — query normalization, language detection and translation</li>
+              <li>Added safeguards against unsupported or fabricated responses so answers stay grounded in retrieved sources</li>
+              <li><a class="proj-link" href="https://github.com/iamfizzakhalid-blip/agriculture-advisory-assistant" target="_blank" rel="noopener" onclick="event.stopPropagation()">View on GitHub ↗</a></li>
             </ul>
             <div class="proj-meta">
-              <div class="pm-row"><span>Engine</span><span class="val">SFML</span></div>
-              <div class="pm-row"><span>Core Concepts</span><span class="val">Arrays · Loops</span></div>
-              <div class="pm-row"><span>Systems</span><span class="val">Collision · AI</span></div>
+              <div class="pm-row"><span>Languages</span><span class="val">English · Urdu</span></div>
+              <div class="pm-row"><span>Crops</span><span class="val">5 major</span></div>
+              <div class="pm-row"><span>Embeddings</span><span class="val">MiniLM‑L6‑v2</span></div>
+              <div class="pm-row"><span>Vector DB</span><span class="val">ChromaDB</span></div>
             </div>
           </div></div>
         </div>
@@ -794,22 +898,22 @@ a:focus-visible, button:focus-visible {
         <div class="proj-item">
           <div class="proj-head">
             <div>
-              <span class="proj-idx">02 / Console App</span>
-              <span class="proj-name">Facebook‑like Application</span>
-              <div class="proj-stack"><span>C++</span><span>OOP</span><span>Memory Mgmt</span></div>
+              <span class="proj-idx">02 / Applied AI</span>
+              <span class="proj-name">StudyZen — Academic Wellness</span>
+              <div class="proj-stack"><span>Brain.js</span><span>Gemini API</span><span>JavaScript</span></div>
             </div>
             <div class="proj-arrow">↗</div>
           </div>
           <div class="proj-detail"><div class="proj-detail-inner">
             <ul class="proj-bullets">
-              <li>Built a console‑based social media application using object‑oriented programming</li>
-              <li>Implemented features like user profiles, posts, and news feed</li>
-              <li>Applied concepts of classes, objects, and dynamic memory management</li>
+              <li>Built a browser‑based neural network (Brain.js) that detects student stress in real time from typing behaviour — zero server, zero data egress</li>
+              <li>Integrated Google Gemini 1.5 Flash for personalised motivational note generation, achieving 92.5% stress classification accuracy across a 40‑row evaluation dataset</li>
+              <li>Deployed as a zero‑infrastructure single HTML file on Vercel with multi‑tenant user isolation and mood‑driven model retraining</li>
             </ul>
             <div class="proj-meta">
-              <div class="pm-row"><span>Type</span><span class="val">Console App</span></div>
-              <div class="pm-row"><span>Features</span><span class="val">Profiles · Feed</span></div>
-              <div class="pm-row"><span>Memory</span><span class="val">Dynamic Alloc</span></div>
+              <div class="pm-row"><span>Accuracy</span><span class="val">92.5%</span></div>
+              <div class="pm-row"><span>Infra</span><span class="val">Zero‑server</span></div>
+              <div class="pm-row"><span>AI Model</span><span class="val">Gemini 1.5 Flash</span></div>
             </div>
           </div></div>
         </div>
@@ -817,22 +921,22 @@ a:focus-visible, button:focus-visible {
         <div class="proj-item">
           <div class="proj-head">
             <div>
-              <span class="proj-idx">03 / Systems</span>
-              <span class="proj-name">Car Racing Game</span>
-              <div class="proj-stack"><span>Assembly</span><span>Low-Level</span></div>
+              <span class="proj-idx">03 / Database System</span>
+              <span class="proj-name">Netflix 2.0 — Streaming DB</span>
+              <div class="proj-stack"><span>SQL Server</span><span>T-SQL</span><span>Node.js</span><span>Express</span></div>
             </div>
             <div class="proj-arrow">↗</div>
           </div>
           <div class="proj-detail"><div class="proj-detail-inner">
             <ul class="proj-bullets">
-              <li>Developed a low‑level car racing game using Assembly language</li>
-              <li>Implemented direct memory handling and logic control</li>
-              <li>Strengthened understanding of computer architecture and low‑level programming</li>
+              <li>Designed a normalized 11‑table relational database with constraints, stored procedures, and views</li>
+              <li>Built 3 automated triggers enforcing business logic — subscription gating, auto‑recommendations on high ratings, and watchlist cleanup on watch</li>
+              <li>Developed a single‑page front‑end with a Node.js/Express back‑end connected to SQL Server</li>
             </ul>
             <div class="proj-meta">
-              <div class="pm-row"><span>Language</span><span class="val">x86 Assembly</span></div>
-              <div class="pm-row"><span>Handling</span><span class="val">Direct Memory</span></div>
-              <div class="pm-row"><span>Focus</span><span class="val">Architecture</span></div>
+              <div class="pm-row"><span>Tables</span><span class="val">11 (normalized)</span></div>
+              <div class="pm-row"><span>Triggers</span><span class="val">3 automated</span></div>
+              <div class="pm-row"><span>Stack</span><span class="val">Node + Express</span></div>
             </div>
           </div></div>
         </div>
@@ -863,22 +967,22 @@ a:focus-visible, button:focus-visible {
         <div class="proj-item">
           <div class="proj-head">
             <div>
-              <span class="proj-idx">05 / Database System</span>
-              <span class="proj-name">Netflix 2.0 — Streaming DB</span>
-              <div class="proj-stack"><span>SQL Server</span><span>T-SQL</span><span>Node.js</span><span>Express</span></div>
+              <span class="proj-idx">05 / Game Dev</span>
+              <span class="proj-name">Space Shooter Game</span>
+              <div class="proj-stack"><span>C++</span><span>SFML</span><span>OOP</span></div>
             </div>
             <div class="proj-arrow">↗</div>
           </div>
           <div class="proj-detail"><div class="proj-detail-inner">
             <ul class="proj-bullets">
-              <li>Designed a normalized 11‑table relational database with constraints, stored procedures, and views</li>
-              <li>Built 3 automated triggers enforcing business logic — subscription gating, auto‑recommendations, and watchlist cleanup</li>
-              <li>Developed a single‑page front‑end with a Node.js/Express back‑end connected to SQL Server</li>
+              <li>Developed a 2D space shooter game using C++</li>
+              <li>Implemented game logic using loops, arrays, and object‑oriented programming</li>
+              <li>Designed player movement, enemy behavior, and collision handling</li>
             </ul>
             <div class="proj-meta">
-              <div class="pm-row"><span>Tables</span><span class="val">11 (normalized)</span></div>
-              <div class="pm-row"><span>Triggers</span><span class="val">3 automated</span></div>
-              <div class="pm-row"><span>Stack</span><span class="val">Node + Express</span></div>
+              <div class="pm-row"><span>Engine</span><span class="val">SFML</span></div>
+              <div class="pm-row"><span>Core Concepts</span><span class="val">Arrays · Loops</span></div>
+              <div class="pm-row"><span>Systems</span><span class="val">Collision · AI</span></div>
             </div>
           </div></div>
         </div>
@@ -886,22 +990,45 @@ a:focus-visible, button:focus-visible {
         <div class="proj-item">
           <div class="proj-head">
             <div>
-              <span class="proj-idx">06 / Applied AI</span>
-              <span class="proj-name">StudyZen — Academic Wellness</span>
-              <div class="proj-stack"><span>Brain.js</span><span>Gemini API</span><span>JavaScript</span></div>
+              <span class="proj-idx">06 / Console App</span>
+              <span class="proj-name">Facebook‑like Application</span>
+              <div class="proj-stack"><span>C++</span><span>OOP</span><span>Memory Mgmt</span></div>
             </div>
             <div class="proj-arrow">↗</div>
           </div>
           <div class="proj-detail"><div class="proj-detail-inner">
             <ul class="proj-bullets">
-              <li>Built a browser‑based neural network (Brain.js) that detects student stress in real time from typing behaviour — zero server, zero data egress</li>
-              <li>Integrated Google Gemini 1.5 Flash for personalised motivational note generation, achieving 92.5% stress classification accuracy</li>
-              <li>Deployed as a zero‑infrastructure single HTML file on Vercel with multi‑tenant user isolation and mood‑driven model retraining</li>
+              <li>Built a console‑based social media application using object‑oriented programming</li>
+              <li>Implemented features like user profiles, posts, and news feed</li>
+              <li>Applied concepts of classes, objects, and dynamic memory management</li>
             </ul>
             <div class="proj-meta">
-              <div class="pm-row"><span>Accuracy</span><span class="val">92.5%</span></div>
-              <div class="pm-row"><span>Infra</span><span class="val">Zero‑server</span></div>
-              <div class="pm-row"><span>AI Model</span><span class="val">Gemini 1.5 Flash</span></div>
+              <div class="pm-row"><span>Type</span><span class="val">Console App</span></div>
+              <div class="pm-row"><span>Features</span><span class="val">Profiles · Feed</span></div>
+              <div class="pm-row"><span>Memory</span><span class="val">Dynamic Alloc</span></div>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-head">
+            <div>
+              <span class="proj-idx">07 / Systems</span>
+              <span class="proj-name">Car Racing Game</span>
+              <div class="proj-stack"><span>Assembly</span><span>Low-Level</span></div>
+            </div>
+            <div class="proj-arrow">↗</div>
+          </div>
+          <div class="proj-detail"><div class="proj-detail-inner">
+            <ul class="proj-bullets">
+              <li>Developed a low‑level car racing game using Assembly language</li>
+              <li>Implemented direct memory handling and logic control</li>
+              <li>Strengthened understanding of computer architecture and low‑level programming</li>
+            </ul>
+            <div class="proj-meta">
+              <div class="pm-row"><span>Language</span><span class="val">x86 Assembly</span></div>
+              <div class="pm-row"><span>Handling</span><span class="val">Direct Memory</span></div>
+              <div class="pm-row"><span>Focus</span><span class="val">Architecture</span></div>
             </div>
           </div></div>
         </div>
@@ -914,9 +1041,9 @@ a:focus-visible, button:focus-visible {
   <section id="process">
     <div class="wrap">
       <div class="reveal">
-        <div class="section-tag"><span class="idx">04</span> Process</div>
+        <div class="section-tag"><span class="idx">05</span> Process</div>
         <h2 class="section-title">How I build<br>a project.</h2>
-        <p class="section-sub">Same loop every time — whether it's Assembly or a neural net.</p>
+        <p class="section-sub">Same loop every time — whether it's Assembly, a SQL schema or a RAG pipeline.</p>
       </div>
 
       <div class="flow-wrap reveal" style="transition-delay:.1s">
@@ -961,21 +1088,24 @@ a:focus-visible, button:focus-visible {
       <div class="contact-inner">
         <div class="reveal">
           <div class="status-pill"><span class="status-dot"></span> Open to internships &amp; freelance builds</div>
-          <div class="section-tag"><span class="idx">05</span> Contact</div>
+          <div class="section-tag"><span class="idx">06</span> Contact</div>
           <h2 class="section-title">Let's build<br>something solid.</h2>
-          <p class="section-sub" style="margin-bottom:32px;">Have a project in mind, an internship opening, or just want to talk systems design? My inbox is open.</p>
-          <a href="mailto:fizzakhalid1507@gmail.com" class="big-link">
+          <p class="section-sub" style="margin-bottom:32px;">Have a project in mind, an internship opening, or want to talk AI, RAG or systems design? My inbox is open.</p>
+          <a href="mailto:iamfiizzakhalid@gmail.com" class="big-link">
             <span class="bic">↗</span> Send an email
           </a>
           <a href="https://www.linkedin.com/in/fizzakhalid-58a596393" target="_blank" rel="noopener" class="big-link">
             <span class="bic">↗</span> Connect on LinkedIn
+          </a>
+          <a href="https://github.com/iamfizzakhalid-blip" target="_blank" rel="noopener" class="big-link">
+            <span class="bic">↗</span> See my GitHub
           </a>
         </div>
 
         <div class="reveal contact-card" style="transition-delay:.15s">
           <div class="cc-row">
             <span class="cc-lbl">Email</span>
-            <span class="cc-val"><a href="mailto:fizzakhalid1507@gmail.com">fizzakhalid1507@gmail.com</a></span>
+            <span class="cc-val"><a href="mailto:iamfiizzakhalid@gmail.com">iamfiizzakhalid@gmail.com</a></span>
           </div>
           <div class="cc-row">
             <span class="cc-lbl">Phone</span>
@@ -990,8 +1120,12 @@ a:focus-visible, button:focus-visible {
             <span class="cc-val"><a href="https://www.linkedin.com/in/fizzakhalid-58a596393" target="_blank" rel="noopener">/fizza‑khalid</a></span>
           </div>
           <div class="cc-row">
+            <span class="cc-lbl">GitHub</span>
+            <span class="cc-val"><a href="https://github.com/iamfizzakhalid-blip" target="_blank" rel="noopener">/iamfizzakhalid‑blip</a></span>
+          </div>
+          <div class="cc-row">
             <span class="cc-lbl">Status</span>
-            <span class="cc-val open-status">Student · FAST‑NUCES</span>
+            <span class="cc-val open-status">CS Student · Ex‑AI Intern, FAST‑NUCES</span>
           </div>
         </div>
       </div>
@@ -1004,8 +1138,9 @@ a:focus-visible, button:focus-visible {
   <div class="wrap foot-inner">
     <div class="foot-copy">© <span id="year"></span> Fizza Khalid. Compiled with care in Lahore.</div>
     <div class="foot-links">
-      <a href="mailto:fizzakhalid1507@gmail.com">Email</a>
+      <a href="mailto:iamfiizzakhalid@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/fizzakhalid-58a596393" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/iamfizzakhalid-blip" target="_blank" rel="noopener">GitHub</a>
       <a href="tel:+923259856755">Phone</a>
     </div>
     <a href="#top" class="back-top" aria-label="Back to top">↑</a>
@@ -1131,7 +1266,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 /* === MARQUEE === */
 (function(){
-  const items = ['C++','SQL Server','Python','OOP','Assembly','T-SQL','Node.js','Brain.js','Gemini API','System Design'];
+  const items = ['C++','SQL Server','Python','RAG','LLMs','ChromaDB','Sentence Transformers','Streamlit','OOP','Assembly','T-SQL','Node.js','Brain.js','Gemini API','Groq API'];
   const track = document.getElementById('marqueeTrack');
   const build = () => {
     const f = document.createDocumentFragment();
@@ -1158,8 +1293,9 @@ document.getElementById('year').textContent = new Date().getFullYear();
     `&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-fn">string</span> uni  = <span class="t-str">"FAST-NUCES"</span>;`,
     `&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-fn">int</span>    grad = <span class="t-str">2028</span>;`,
     `&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-fn">vector</span>&lt;<span class="t-fn">string</span>&gt; stack = {`,
-    `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"C++"</span>, <span class="t-str">"SQL"</span>, <span class="t-str">"Python"</span>`,
+    `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"C++"</span>, <span class="t-str">"SQL"</span>, <span class="t-str">"Python"</span>, <span class="t-str">"RAG"</span>`,
     `&nbsp;&nbsp;&nbsp;&nbsp;};`,
+    `&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-fn">string</span> exp  = <span class="t-str">"AI Intern '26"</span>;`,
     `&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-key">void</span> <span class="t-fn">build</span>() { ship(); }`,
     `};`,
     `<span class="t-pro">$</span> ./run --status<span class="t-cur"></span>`
